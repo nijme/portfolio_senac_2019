@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <title>Portfólio</title>
+        <meta name="description" content="descrição">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Abel|Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="css/estilo.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
+    </head>
+    <body>
+        
+        <header class="intro">
+            
+            <div class="container">
+            
+                <h1 class="intro__titulo">
+                    Oi!<br>
+                    Sou <strong class="intro__verde">BÁRBARA</strong>,<br>
+                    uma <strong class="intro__rosa">DESIGNER</strong> criativa<br>
+                    e <strong class="intro__azul">SEM LIMITES</strong>.
+                </h1>
+                <nav>
+                <ol class="menu">
+                    <li><a href="#sobre">Sobre</a></li><!--link por ancoras # mais alguma palavra vai procurar o atributo id idetificação única é diferente de class, não pode ter mais nenhum igual na página-->
+                    <li><a href="#trabalhos">Trabalhos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ol>
+                </nav>
+            </div><!--fecha container-->
+            
+        </header><!--fecha intro-->
+        
+        <section id="sobre" class="sobre">
+            
+            <div class="container">
+                
+                <h1 class="titulo_secao">
+                    Sobre
+                </h1>  
+                <div class="texto">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sodales diam lacus, at consequat velit vehicula vitae. Duis ut ante nec nisl fermentum dapibus pulvinar sit amet nisi.
+                    </p>
+                    <p>
+                        Fusce finibus lacus et hendrerit ornare. Proin consectetur libero orci, eget eleifend sapien mollis viverra. Nam ut maximus turpis, vitae commodo tellus. Sed est eros, volutpat eget molestie mattis, faucibus ut risus.
+                    </p>
+                </div>
+                
+            </div><!--fecha container-->
+            
+        </section><!--fecha sobre-->
+        
+        <section id="trabalhos" class="trabalhos">
+            
+            <div class="container">
+                
+                <h1 class="titulo_secao">
+                    Trabalhos
+                </h1>
+                
+                <div class="galeria">
+                    <a href="imagens/farol.jpg" data-fancybox="gallery">
+                        <img src="imagens/trabalho01.jpg">
+                    </a>
+                    <a href="imagens/praia.jpg">
+                        <img src="imagens/trabalho02.jpg">
+                    </a>
+                    <a href="#">
+                        <img src="imagens/trabalho03.jpg">
+                    </a>
+                </div><!--fecha galeria-->
+                
+            </div><!--fecha container-->
+            
+        </section><!--fecha trabalhos-->
+        
+        <footer  id="contato" class="contato">
+            
+            <div class="container">
+                
+                <h1 class="titulo_secao">
+                    Entre em contato
+                </h1>
+                
+                <div class="texto">
+                    <p>
+                        <a href="mailto:email@email.com">email@email.com</a><!--para ser enviado tem que adicionar mailto: sem espaços - o texto do link pode ser um convite para enviar um email-->
+                    </p>
+                </div><!--fecha texto-->
+                
+                <div class="redes">
+                    <a href="#" target="_blank"><!--endereço da rede social com http:// adiciona o target blank para abrir em outra janela somente para links externos, se quiser abrir como a galeria usar pluggins-->
+                        <img src="imagens/facebook.png">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="imagens/twitter.png">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="imagens/linkedin.png">
+                    </a>
+                </div><!--fecha redes-->
+                
+            </div><!--fecha container-->
+            
+        </footer><!--fecha contato-->
+        <!--script sempre no final porque precisa que a página carregue, só pode ser escrito em java script. Comentarios //-->
+        <!--Javascript
+            //jQuery
+            // $() busca algum elemento
+            //$('.galeria').fadeOut(5000);//as fotos somem aos poucos
+            //$('.trabalhos h1').click(
+                //function(){
+                   // $('.galeria').slideToggle();
+                    // $() seletor JQuery
+                    //Toggle (com slide, fade adiciona uma animação) é uma função do JQuery de trocar de estado de um para o outro, ligar e desligar, abrir e fechar (display block e display none)-->
+        <script>
+            $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+        
+        </script>
+    </body>
+</html>

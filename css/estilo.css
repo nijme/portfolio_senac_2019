@@ -1,0 +1,244 @@
+/*box sizing border box
+    não somar paddings a largura e altura
+*/
+* {
+    box-sizing: border-box;
+}
+
+.intro {
+    background-image: url(../imagens/fundo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    min-height: 992px;
+    display: flex;
+    /*align-items: center;*/
+    padding-top: 230px;
+}
+
+.intro__titulo {
+    font-size: 79px;
+    font-family: 'Poiret One', cursive;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 35px;
+}
+
+.intro__verde, .intro__rosa, .intro__azul {
+    font-weight: normal;
+}
+
+.intro__titulo strong {
+    font-weight: normal;
+}
+
+.intro__verde {
+    color: #99ff66;
+}
+
+.intro__rosa {
+    color: #e87acb;
+}
+
+.intro__azul {
+    color: #16b0af;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu a {
+    color: #ffffff;
+    font-size: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+/*pseudo class*/
+.menu a:hover {
+    /*text-decoration: underline;*/
+    border-bottom: 1px solid #ffffff;
+}
+/*pseudo elemento
+.menu a::after {
+    display: block;
+    content: '';
+    width: 40px;
+    background-color: #fff;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+.menu li {
+    margin-right: 55px;
+}
+
+body {
+    font-family: 'Abel', sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*SOBRE*/
+.sobre {
+    background-image: url(../imagens/fundo-sobre.jpg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    height: 724px;
+    padding-top: 110px;
+}
+
+.titulo_secao {
+    text-transform: uppercase;
+    font-size: 75px;
+    font-weight: normal;
+    color: #660033;
+    margin: 0 0 15px;
+    font-family: 'Poiret One', cursive;
+    text-align: center;
+}
+
+.texto p {
+    color: #2a2b2d;
+    font-size: 38px;
+    margin: 0 0 45px;
+}
+
+.galeria {
+    display: flex;
+}
+
+.trabalhos {
+    background-color: #271929;
+    padding-top: 110px;
+    padding-bottom: 140px;
+}
+
+.trabalhos .titulo_secao {
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.fancybox-bg {
+    background: #0fc64d;
+}
+
+.contato {
+    background-color: #2da023;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    padding: 110px 0;/*versão abreviada*/
+    text-align: center;
+}
+
+.contato .titulo_secao { 
+    color: #000000;
+    
+}
+.contato a {
+    text-decoration: none; /*serve para colocar e tirar sublinhado*/
+    color: #000;    
+}
+
+.redes a {
+    /*um elemento empurrando o outro é melhor usar o margin quando estão centralizados os dois empurram dividir a medida encontrada em pixels no photoshop para cada*/
+    margin: 0 15px;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    align-items: center; /*alinha todos os icones das redes sociais pelo centro*/
+    
+}
+
+/*RESPONSIVO TABLET
+media queries
+*/
+@media (max-width: 1139px) {
+    .container {
+        width: 768px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .intro__titulo {
+        font-size: 70px;
+    }
+    
+    .texto p {
+        font-size: 30px;
+    }
+    
+    .sobre {
+        background-position: center bottom;
+    }
+    .galeria{
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+    .galeria img{
+        display: block; /*para tirar espaço entre as imagens*/
+        max-width: 100%; /*largura ocupar todo o espaço, se a imagem for maior ela vai diminuir, se ela for menor ficar do mesmo tamanho, então ajuda a imagem não quer sair da caixa*/
+    }
+}
+
+
+/*CELULAR*/
+@media (max-width: 767px) {
+    
+    .container {
+        width: 320px;
+    }
+    
+    .intro__titulo {
+        font-size: 25px;
+    }
+    
+    .menu {
+        display: block;
+    }
+    
+    .menu a {
+        /*para aumentar a caixa do link*/
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    
+    .intro {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        min-height: 0;
+    }
+    
+    .texto p {
+        font-size: 20px;
+    }
+    
+    .titulo_secao{
+        font-size: 45px;
+        
+    }
+    
+    
+    
+    
+    
+}
+
+
+
+
+
+
+
+
